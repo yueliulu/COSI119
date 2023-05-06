@@ -33,7 +33,17 @@ For package.xml:
 2. How to use the message?
   The publisher and subscriber's syntax are the same. However, we want to create a new topic name and make sure the new topic message type is specified. For example in my project I have a message type called see_intruder:
   <pre><code>self.detect_intruder_pub = rospy.Publisher('/see_intruder', see_intruder, queue_size=1)
-        self.detect_intruder_sub=rospy.Subscriber('/see_intruder', see_intruder,self.see_intruder_callback)
+self.detect_intruder_sub=rospy.Subscriber('/see_intruder', see_intruder,self.see_intruder_callback)
   </code></pre>
+  Since our new message depends on some build in message type, when we try to access the feild of our msg, we need to do msg.<field_name>.data given that the build in message type has a field named data. So in the first example I had, if we want to access the string stored in index int of list, I need to do
+  <pre><code>msg.list[msg.int.data].data</code></pre>
+  
+## How to check if the new message type is recognized by ROS?
+Do a cm in your vnc. if the message is successfully recognized by ROS, you will see the msg file being successfully generated. 
+
+## Having an error "No module named <>.msg"?
+In your vnc terminal, type the command
+<pre><code>source ~/catkin_ws/devel/setup.bash</code></pre>
+This should solve the error.
 
 
