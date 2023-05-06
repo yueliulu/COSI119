@@ -26,5 +26,14 @@ For package.xml:
   2. Uncomment <exec_depend>message_runtime</exec_depend> on line 46
 
 ## How to use the newly created message type?
+1. How to import the message?
+  <pre><code>from <package_name>.msg import <message_name> as <message_name></code></pre>
+  If your message type contains a list of buildin message type, also make sure to import that buildin message type:
+  <pre><code>from std_msgs.msg import String</code></pre>
+2. How to use the message?
+  The publisher and subscriber's syntax are the same. However, we want to create a new topic name and make sure the new topic message type is specified. For example in my project I have a message type called see_intruder:
+  <pre><code>self.detect_intruder_pub = rospy.Publisher('/see_intruder', see_intruder, queue_size=1)
+        self.detect_intruder_sub=rospy.Subscriber('/see_intruder', see_intruder,self.see_intruder_callback)
+  </code></pre>
 
 
