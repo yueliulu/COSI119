@@ -4,10 +4,10 @@ description: This FAQ documents specific instructions to define a new Message, a
 
 ## How to create a new message type?
 After created a ROS package, our package is constructed by a src folder, a CMakeLists.txt file, and a package.xml file. We need to create a msg folder to hold all of our new msg file. Then in your msg folder, create a new file <new_message>.msg, which contains fields you needed for this message type. <br />
-For each fields in your msg file, define the name of the field and the type of the field (usually use std_msgs/<Type> or geometry_msgs/<Type>).
+For each fields in your msg file, define the name of the field and the type of the field (usually use std_msgs/<Type> or geometry_msgs/<Type>). <br \>
   For example, if you want your message to have a list of string and an integer, you should code:
-  std_msgs/String[] list
-  std_msgs/Int16 int
+    std_msgs/String[] list
+    std_msgs/Int16 int
 
 ## How to let the new message type recognized by ROS?
 There are some modifications you need to make to CMakeLists.txt and package.xml in order to let the new message type recognized by ROS.
