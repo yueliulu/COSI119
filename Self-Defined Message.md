@@ -10,7 +10,7 @@ For each fields in your msg file, define the name of the field and the type of t
 std_msgs/Int16 int</code></pre>
 
 ## How to let the new message type recognized by ROS?
-There are some modifications you need to make to CMakeLists.txt and package.xml in order to let the new message type recognized by ROS.
+There are some modifications you need to make to CMakeLists.txt and package.xml in order to let the new message type recognized by ROS. <br \>
 For CMakeLists.txt:
 1. Make sure message_generation is in find_package().
 2. Uncomment add_message_files() and add your .msg file name to add_message_files().
@@ -22,8 +22,8 @@ For CMakeLists.txt:
 5. Uncomment include in include_directories()
   
 For package.xml:
-  1. Uncomment <build_depend>message_generation</build_depend>
-  2. Uncomment <exec_depend>message_runtime</exec_depend>
+  1. Uncomment <build_depend>message_generation</build_depend> on line 40
+  2. Uncomment <exec_depend>message_runtime</exec_depend> on line 46
 
 ## How to use the newly created message type?
 
