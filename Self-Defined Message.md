@@ -7,8 +7,7 @@ After created a ROS package, our package is constructed by a src folder, a CMake
 For each fields in your msg file, define the name of the field and the type of the field (usually use std_msgs/<Type> or geometry_msgs/<Type>). <br \>
   For example, if you want your message to have a list of string and an integer, you msg file should look like:
   <pre><code>std_msgs/String[] list
-std_msgs/Int16 int
-  </code></pre>
+std_msgs/Int16 int</code></pre>
 
 ## How to let the new message type recognized by ROS?
 There are some modifications you need to make to CMakeLists.txt and package.xml in order to let the new message type recognized by ROS.
@@ -16,11 +15,9 @@ There are some modifications you need to make to CMakeLists.txt and package.xml 
 2. Uncomment add_message_files() and add your .msg file name to add_message_files().
 3. Uncomment generate_messages()
 4. Modify catkin_package() to
-<pre><code>
-catkin_package(
+<pre><code>catkin_package(
   CATKIN_DEPENDS message_runtime
-)
-</code></pre>
+)</code></pre>
 5. Uncomment include in include_directories()
 ## How to use the newly created message type?
 
