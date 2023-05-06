@@ -7,7 +7,7 @@ After created a ROS package, our package is constructed by a src folder, a CMake
 For each fields in your msg file, define the name of the field and the type of the field (usually use std_msgs/<Type> or geometry_msgs/<Type>). <br \>
   For example, if you want your message to have a list of string and an integer, you msg file should look like:
   <pre><code>std_msgs/String[] list
-  std_msgs/Int16 int
+std_msgs/Int16 int
   </code></pre>
 
 ## How to let the new message type recognized by ROS?
