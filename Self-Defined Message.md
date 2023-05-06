@@ -27,7 +27,7 @@ For package.xml:
 
 ## How to use the newly created message type?
 1. How to import the message?
-  <pre><code>from <package_name>.msg import <message_name> as <message_name></code></pre>
+  <pre><code>from package_name.msg import message_name as message_name</code></pre>
   If your message type contains a list of buildin message type, also make sure to import that buildin message type:
   <pre><code>from std_msgs.msg import String</code></pre>
 2. How to use the message?
