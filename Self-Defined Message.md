@@ -12,10 +12,16 @@ std_msgs/Int16 int
 
 ## How to let the new message type recognized by ROS?
 There are some modifications you need to make to CMakeLists.txt and package.xml in order to let the new message type recognized by ROS.
-1. Add message_generation to find_package().
-2. Add your .msg file name to add_message_files().
-3. Comment out generate_messages()
-
+1. Make sure message_generation is in find_package().
+2. Uncomment add_message_files() and add your .msg file name to add_message_files().
+3. Uncomment generate_messages()
+4. Modify catkin_package() to
+<pre><code>
+catkin_package(
+  CATKIN_DEPENDS message_runtime
+)
+</code></pre>
+5. Uncomment include in include_directories()
 ## How to use the newly created message type?
 
 
